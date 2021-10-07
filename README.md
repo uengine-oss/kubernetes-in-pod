@@ -121,7 +121,7 @@ Make sure that you have to configure the hosts file before you access to the URL
 ```
 # vi /etc/hosts
 
-127.0.0.1   www.service.com   
+<the external ip obtained from kind-cluster service>   www.service.com   
 ```
 
 
