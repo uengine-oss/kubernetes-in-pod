@@ -11,6 +11,8 @@ RUN curl -Lso /usr/bin/kubectl "https://storage.googleapis.com/kubernetes-releas
 COPY kind-config.yaml /kind-config.yaml
 
 EXPOSE 30001
+EXPOSE 80
+EXPOSE 443
 
 RUN mv /entrypoint.sh /entrypoint-original.sh
 COPY entrypoint-wrapper.sh /entrypoint.sh
