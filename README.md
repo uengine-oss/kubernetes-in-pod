@@ -1,6 +1,6 @@
 # Kubernetes in a Pod
 
-KIND (Kuberntes in Docker) is very useful when you only need to create a cluster for testing or education purposes. If you provide them in a Pod, you can easily provide kubernetes clusters for many people.
+KIND (Kuberntes in Docker) is very useful when you only need to create a cluster for testing or education purposes. If you provide them in a Pod, you can easily provide kubernetes clusters for many developers or operators for debugging/education/testing purposes. 
 
 Create following pod firstly:
 ```
@@ -153,3 +153,7 @@ Finally, go to following URL with a browser:
 ```
 www.service.com/<service paths>
 ```
+
+
+# RoadMap
+Integration with Theia-IDE, for providing an integrated development environment for complete kubernetes development.
