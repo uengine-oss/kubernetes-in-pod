@@ -1,5 +1,7 @@
 # Kubernetes in a Pod
 
+KIND (Kuberntes in Docker) is very useful when you only need to create a cluster for testing for education purposes. If you provide them in a Pod, you easily create and dispose after using it.
+
 Create following pod firstly:
 ```
 apiVersion: v1
