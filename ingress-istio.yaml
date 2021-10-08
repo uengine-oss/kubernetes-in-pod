@@ -10,16 +10,20 @@ spec:
       paths:
       - path: "/"
         backend:
-          serviceName: istio-ingressgateway
-          servicePort: 80
+          service:
+            name: istio-ingressgateway
+            port: 
+              number: 80
 
   - host: "tracing.service.com"
     http:
       paths:
       - path: "/"
         backend:
-          serviceName: tracing
-          servicePort: 80
+          service: 
+            name: tracing
+            port:
+              number: 80
 
 
   - host: "grafana.service.com"
@@ -27,5 +31,7 @@ spec:
       paths:
       - path: "/"
         backend:
-          serviceName: grafana
-          servicePort: 3000
+          service: 
+            name: grafana
+            port:
+              number: 3000
