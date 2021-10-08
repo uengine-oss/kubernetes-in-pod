@@ -20,10 +20,10 @@ kubectl exec -it kind-cluster -- /bin/bash
 
 Wait until the Kind cluster is up by trying to set the Kubectl context connect to the Kind:
 ```
-# kubectl cluster-info --context kind-kind  # try this for about 2~3 minutes
+root@kind-cluster:/ kubectl cluster-info --context kind-kind  # try this for about 2~3 minutes
 error: context "kind-kind" does not exist
 
-.... try for several times .... 
+.... after 2~3 minutes .... 
 
 root@kind-cluster:/# kubectl cluster-info --context kind-kind
 
