@@ -194,7 +194,7 @@ spec:
       - path: "/"
         backend:
           serviceName: grafana
-          servicePort: 80
+          servicePort: 3000
 
 ```
 
@@ -204,8 +204,6 @@ spec:
 34.146.166.15   tracing.service.com
 34.146.166.15   grafana.service.com
 ```
-
-* [NOTE] You have to change the port number of grafana service from 3000 to 80 by changing the service configuration or you need to add expose 3000 port by changing the Dockerfile and the Pod yaml.
 
 # RoadMap
 Integration with Theia-IDE, for providing an integrated development environment for complete kubernetes development.
