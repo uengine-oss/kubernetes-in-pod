@@ -7,12 +7,6 @@ Create following pod firstly:
 kubectl apply -f https://raw.githubusercontent.com/uengine-oss/kubernetes-in-pod/master/kind-cluster.yaml
 ```
 
-Expose the pod as LoadBalancer:
-```
-kubectl expose po kind-cluster --port=80 --type=LoadBalancer
-```
-* Keep a note the external ip for later use.
-
 After creating the Pod, attach to the bash:
 ```
 kubectl exec -it kind-cluster -- /bin/bash
@@ -70,7 +64,7 @@ Make sure that you have to configure the hosts file before you access to the URL
 
 <the external ip obtained from kind-cluster service>   www.service.com   
 ```
-
+> You can get the external ip by hitting:  kubectl get svc kind-cluster
 
 If you use Istio, you only need to expose the istio-ingressgateway:
 > To install istio, follow the instruction: https://istio.io/latest/docs/setup/getting-started/
