@@ -9,7 +9,7 @@ spec:
     http:
       paths:
       - path: "/"
-        pathType: "Prefix"
+        pathType: Prefix
         backend:
           service:
             name: istio-ingressgateway
@@ -20,7 +20,7 @@ spec:
     http:
       paths:
       - path: "/"
-        pathType: "Prefix"
+        pathType: Prefix
         backend:
           service: 
             name: tracing
@@ -32,7 +32,7 @@ spec:
     http:
       paths:
       - path: "/"
-        pathType: "Prefix"
+        pathType: Prefix
         backend:
           service: 
             name: grafana
