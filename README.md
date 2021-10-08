@@ -76,6 +76,7 @@ Make sure that you have to configure the hosts file before you access to the URL
 
 
 If you use Istio, you only need to expose the istio-ingressgateway:
+> To install istio, follow the instruction: https://istio.io/latest/docs/setup/getting-started/
 ```
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
