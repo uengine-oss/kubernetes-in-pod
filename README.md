@@ -12,7 +12,7 @@ metadata:
     app: kind-cluster
 spec:
   containers:
-  - image: ghcr.io/jinyoung/kind-cluster:v4
+  - image: ghcr.io/jinyoung/kind-cluster:v5
     imagePullPolicy: Always
     name: kind-cluster
     stdin: true
