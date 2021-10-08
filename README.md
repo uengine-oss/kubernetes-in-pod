@@ -64,7 +64,13 @@ Make sure that you have to configure the hosts file before you access to the URL
 
 <the external ip obtained from kind-cluster service>   www.service.com   
 ```
-> You can get the external ip by hitting:  kubectl get svc kind-cluster
+> You can get the external ip by hitting:  
+```
+
+# kubectl get svc kind-cluster
+NAME                                            TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)                       AGE
+kind-cluster                                    LoadBalancer   10.101.3.24     34.146.166.15   80:31357/TCP,3000:32749/TCP   16h
+```
 
 If you use Istio, you only need to expose the istio-ingressgateway:
 > To install istio, follow the instruction: https://istio.io/latest/docs/setup/getting-started/
