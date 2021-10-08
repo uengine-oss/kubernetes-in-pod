@@ -154,6 +154,52 @@ Finally, go to following URL with a browser:
 www.service.com/<service paths>
 ```
 
+Example configuration for istio and istio-related telemetry services:
+
+- ingress.yaml
+```
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: example-ingress
+  namespace: istio-system
+spec:
+  rules:
+  - host: "www.service.com"
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: istio-ingressgateway
+          servicePort: 80
+
+  - host: "tracing.service.com"
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: tracing
+          servicePort: 80
+
+
+  - host: "grafana.service.com"
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: grafana
+          servicePort: 80
+
+```
+
+- /etc/hosts file
+```
+34.146.166.15   www.service.com
+34.146.166.15   tracing.service.com
+34.146.166.15   grafana.service.com
+```
+
+* [NOTE] You have to change the port number of grafana service from 3000 to 80 by changing the service configuration or you need to add expose 3000 port by changing the Dockerfile and the Pod yaml.
 
 # RoadMap
 Integration with Theia-IDE, for providing an integrated development environment for complete kubernetes development.
