@@ -106,40 +106,8 @@ www.service.com/<service paths>
 
 Example configuration for istio and istio-related telemetry services:
 
-- ingress.yaml
 ```
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
-metadata:
-  name: example-ingress
-  namespace: istio-system
-spec:
-  rules:
-  - host: "www.service.com"
-    http:
-      paths:
-      - path: "/"
-        backend:
-          serviceName: istio-ingressgateway
-          servicePort: 80
-
-  - host: "tracing.service.com"
-    http:
-      paths:
-      - path: "/"
-        backend:
-          serviceName: tracing
-          servicePort: 80
-
-
-  - host: "grafana.service.com"
-    http:
-      paths:
-      - path: "/"
-        backend:
-          serviceName: grafana
-          servicePort: 3000
-
+kubectl apply -f https://raw.githubusercontent.com/uengine-oss/kubernetes-in-pod/master/ingress-istio.yaml
 ```
 
 - /etc/hosts file
