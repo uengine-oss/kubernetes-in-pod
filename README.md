@@ -14,7 +14,7 @@ kubectl exec -it kind-cluster -- /bin/bash
 
 Wait until the Kind cluster is up by trying to set the Kubectl context connect to the Kind:
 ```
-root@kind-cluster:/ kubectl cluster-info --context kind-kind  # try this for about 2~3 minutes
+root@kind-cluster:/# kubectl cluster-info --context kind-kind  # try this for about 2~3 minutes
 error: context "kind-kind" does not exist
 
 .... after 2~3 minutes .... 
@@ -26,7 +26,13 @@ KubeDNS is running at https://10.36.10.137:30001/api/v1/namespaces/kube-system/s
 
 ```
 
-To access the service outside the pod, you need to install Ambassador Ingress Provider firstly:
+To access the service outside the pod, you need to install NGINX Ingress Provider firstly:  
+```
+https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+
+```
+
+Ambassador Ingress Provider can be used on behalf of the NGINX:
 ```
 kubectl apply -f https://github.com/datawire/ambassador-operator/releases/latest/download/ambassador-operator-crds.yaml
 kubectl apply -n ambassador -f https://github.com/datawire/ambassador-operator/releases/latest/download/ambassador-operator-kind.yaml
