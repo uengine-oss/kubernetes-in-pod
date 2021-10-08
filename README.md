@@ -4,63 +4,7 @@ KIND (Kuberntes in Docker) is very useful when you only need to create a cluster
 
 Create following pod firstly:
 ```
-apiVersion: v1
-kind: Pod
-metadata:
-  name: kind-cluster
-  labels:
-    app: kind-cluster
-spec:
-  containers:
-  - image: ghcr.io/jinyoung/kind-cluster:v5
-    imagePullPolicy: Always
-    name: kind-cluster
-    stdin: true
-    tty: true
-    args:
-    - /bin/bash
-    env:
-    - name: API_SERVER_ADDRESS
-      valueFrom:
-        fieldRef:
-          fieldPath: status.podIP
-    volumeMounts:
-    - mountPath: /var/lib/docker
-      name: varlibdocker
-    - mountPath: /lib/modules
-      name: libmodules
-      readOnly: true
-    securityContext:
-      privileged: true
-    ports:
-    - containerPort: 30001
-      name: api-server-port
-      protocol: TCP
-    - containerPort: 80
-      name: service-port
-      protocol: TCP
-    - containerPort: 443
-      name: secure-service-port
-      protocol: TCP
-    - containerPort: 3000
-      name: grafana-port
-      protocol: TCP
-    readinessProbe:
-      failureThreshold: 15
-      httpGet:
-        path: /healthz
-        port: api-server-port
-        scheme: HTTPS
-      initialDelaySeconds: 120
-      periodSeconds: 20
-      successThreshold: 1
-      timeoutSeconds: 1
-  volumes:
-  - name: varlibdocker
-    emptyDir: {}
-  - name: libmodules
-    hostPath:
-      path: /lib/modules
+kubectl apply -f https://raw.githubusercontent.com/uengine-oss/kubernetes-in-pod/master/kind-cluster.yaml
 ```
 
 Expose the pod as LoadBalancer:
