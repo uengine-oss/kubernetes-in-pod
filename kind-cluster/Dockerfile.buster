@@ -13,6 +13,7 @@ COPY kind-config.yaml /kind-config.yaml
 EXPOSE 30001
 EXPOSE 80
 EXPOSE 443
+EXPOSE 3000
 
 RUN mv /entrypoint.sh /entrypoint-original.sh
 COPY entrypoint-wrapper.sh /entrypoint.sh

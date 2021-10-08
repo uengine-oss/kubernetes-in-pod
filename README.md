@@ -39,6 +39,12 @@ spec:
     - containerPort: 80
       name: service-port
       protocol: TCP
+    - containerPort: 443
+      name: secure-service-port
+      protocol: TCP
+    - containerPort: 3000
+      name: grafana-port
+      protocol: TCP
     readinessProbe:
       failureThreshold: 15
       httpGet:
