@@ -20,14 +20,11 @@ kubectl exec -it kind-cluster -- /bin/bash
 
 Wait until the Kind cluster is up by trying to set the Kubectl context connect to the Kind:
 ```
-root@kind-cluster:/# kubectl cluster-info --context kind-kind
+# kubectl cluster-info --context kind-kind  # try this for about 2~3 minutes
 error: context "kind-kind" does not exist
-root@kind-cluster:/# kubectl cluster-info --context kind-kind
-error: context "kind-kind" does not exist
-root@kind-cluster:/# kubectl cluster-info --context kind-kind
-error: context "kind-kind" does not exist
-root@kind-cluster:/# kubectl cluster-info --context kind-kind
-error: context "kind-kind" does not exist
+
+.... try for several times .... 
+
 root@kind-cluster:/# kubectl cluster-info --context kind-kind
 
 Kubernetes master is running at https://10.36.10.137:30001
