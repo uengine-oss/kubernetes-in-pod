@@ -55,3 +55,29 @@ spec:
   - name: libmodules
     hostPath:
       path: /lib/modules
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  labels:
+    app: kind-cluster
+  name: kind-cluster
+spec:
+  ports:
+  - name: service-port
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  - name: grafana-port
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: kind-cluster
+  sessionAffinity: None
+  type: LoadBalancer                           
