@@ -28,7 +28,7 @@ KubeDNS is running at https://10.36.10.137:30001/api/v1/namespaces/kube-system/s
 
 To access the service outside the pod, you need to install NGINX Ingress Provider firstly:  
 ```
-https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 
 ```
 
