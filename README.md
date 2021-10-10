@@ -32,7 +32,7 @@ https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/pr
 
 ```
 
-Ambassador Ingress Provider can be used on behalf of the NGINX:
+Alternatively, Ambassador Ingress Provider can be used on behalf of the NGINX:
 ```
 kubectl apply -f https://github.com/datawire/ambassador-operator/releases/latest/download/ambassador-operator-crds.yaml
 kubectl apply -n ambassador -f https://github.com/datawire/ambassador-operator/releases/latest/download/ambassador-operator-kind.yaml
